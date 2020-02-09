@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import MenuBar from './MenuBar'
+import Sidebar from './components/sidebar/sidebar.component'
 class App extends Component {
   render() {
     return (
-      <MenuBar/>
+      <Sidebar/>
     )
   }
 }
