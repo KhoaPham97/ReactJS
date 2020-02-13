@@ -3,9 +3,17 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 const drawerWidth = 240;
 
 export const useStyles = makeStyles(theme => ({
+
   root: {
     display: 'flex',
   },
+  parent: {
+   backgroundColor:'red',
+  },
+  children: {
+    backgroundColor:'blue',
+   },
+
   title:{
       paddingLeft:20,
   },

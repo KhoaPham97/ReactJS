@@ -19,6 +19,7 @@ export default function Sidebar() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [isStart, setStart] = React.useState(false);
+ 
 
   const handleDrawerOpen = () => {    
     setOpen(!open)
@@ -72,7 +73,7 @@ export default function Sidebar() {
         <Divider />
         <List>
         {SidebbarItemsData.map((item, index) => (
-        <SidebarItems item={item} key={index} />
+        <SidebarItems item={item} key={index} select = {index} id={item.id}/>
       )
       )}
         </List>
