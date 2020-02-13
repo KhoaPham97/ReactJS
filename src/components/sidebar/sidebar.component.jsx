@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SidebbarItemsData from './menuSidebarItems';
 import SidebarItems from './sidebarItems';
+import IconLibraryBooks from '@material-ui/icons/LibraryBooks'
 
 export default function Sidebar() {
   const classes = useStyles();
@@ -71,9 +72,9 @@ export default function Sidebar() {
       >
         
         <Divider />
-        <List>
+        <List className={classes.sideBar}>
         {SidebbarItemsData.map((item, index) => (
-        <SidebarItems item={item} key={index} select = {index} id={item.id}/>
+        <SidebarItems item={item} key={index} open={open} select ={index} id={item.id}/>
       )
       )}
         </List>

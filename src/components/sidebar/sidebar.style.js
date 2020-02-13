@@ -51,6 +51,7 @@ export const useStyles = makeStyles(theme => ({
     whiteSpace: 'nowrap',
   },
   drawerOpen: {
+  
     width: drawerWidth,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
@@ -64,6 +65,9 @@ export const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       width: theme.spacing(7) + 1,
     },
+  },
+  sideBar:{
+    top:7,
   },
   toolbar: {
     display: 'flex',

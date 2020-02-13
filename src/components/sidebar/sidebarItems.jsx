@@ -1,30 +1,24 @@
 import React from "react";
-import clsx from "clsx";
 import { useTheme } from "@material-ui/core/styles";
 import { useStyles } from "./sidebar.style";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
+
 import List from "@material-ui/core/List";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import IconExpandLess from "@material-ui/icons/ExpandLess";
 import IconExpandMore from "@material-ui/icons/ExpandMore";
 import Collapse from "@material-ui/core/Collapse";
+import IconDashboard from '@material-ui/icons/Dashboard'
+import IconShoppingCart from '@material-ui/icons/ShoppingCart'
+import IconPeople from '@material-ui/icons/People'
+import IconBarChart from '@material-ui/icons/BarChart'
+import IconLibraryBooks from '@material-ui/icons/LibraryBooks'
 
 export default function SidebarItems(props) {
   const classes = useStyles();
   const theme = useTheme();
+  console.log(props.item.Icon,  <IconBarChart/>);
   const [open, setOpen] = React.useState(false);
   const isExpandable = props.item.items && props.item.items.length > 0;
   const removeClass = temp => {
@@ -49,7 +43,7 @@ export default function SidebarItems(props) {
 
     if (getID === undefined) {
       // eslint-disable-next-line no-unused-expressions
-      !open ? event.currentTarget.classList.add(`${classes.parent}`) : null;
+       !open && !isExpandable ? event.currentTarget.classList.add(`${classes.parent}`) :  event.currentTarget.classList.add(`${classes.parent}`);
     }
     if (getParent !== null) {
       getParent.classList.add(`${classes.parent}`);
@@ -60,7 +54,7 @@ export default function SidebarItems(props) {
   const MenuItemRoot = (
     <ListItem className={classes.menuItem} id={props.id} onClick={handleClick}>
       {/* Display an icon if any */}
-      {!!props.item.Icon && <InboxIcon />}
+      {!!props.item.Icon && <IconLibraryBooks/>}
       <ListItemText primary={props.item.name} className={classes.title} />
       {/* Display the expand menu if the item has children */}
       {isExpandable && !open && <IconExpandMore />}
@@ -71,7 +65,7 @@ export default function SidebarItems(props) {
   const MenuItemChildren = isExpandable ? (
     <Collapse in={open} timeout="auto" unmountOnExit>
       <Divider />
-      <List component="div" disablePadding>
+      <List component="div" disablePadding className={!props.open ? classes.hide : ''} >
         {props.item.items.map((item, index) => (
           <SidebarItems item={item} key={index} id={item.id} />
         ))}

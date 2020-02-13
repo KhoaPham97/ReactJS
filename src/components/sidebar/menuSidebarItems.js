@@ -33,10 +33,17 @@ const appMenuItems = [
     items: [
       {
         name: 'Level 2',
+        Icon: IconDashboard,
         id:'children-0#parent-3',
 
       },
+      {
+        name: 'Level 3',
+        Icon: IconDashboard,
 
+        id:'children-1#parent-3',
+
+      },
     ],
   },
   {
@@ -47,6 +54,7 @@ const appMenuItems = [
     items: [
       {
         name: 'Level 2',
+        Icon: IconDashboard,
         id:'children-0#parent-4',
       },
  
