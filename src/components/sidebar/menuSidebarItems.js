@@ -1,64 +1,102 @@
-import IconDashboard from '@material-ui/icons/Dashboard'
-import IconShoppingCart from '@material-ui/icons/ShoppingCart'
-import IconPeople from '@material-ui/icons/People'
-import IconBarChart from '@material-ui/icons/BarChart'
-import IconLibraryBooks from '@material-ui/icons/LibraryBooks'
-
-const appMenuItems = [
+const menuItems = [
   {
-    name: 'Dashboard',
-    link: '/',
-    Icon: IconDashboard,
-    id:'parent-0',
+    name: "Dashboard",
+    url: "/dashboard",
+    icon: "dashboard",
+    class: ""
   },
   {
-    name: 'Orders',
-    link: '/orders',
-    Icon: IconShoppingCart,
-    id:'parent-1',
-
-  },
-  {
-    name: 'Customers',
-    link: '/customers',
-    Icon: IconPeople,
-    id:'parent-2',
-  },
-  {
-    name: 'Reports',
-    link: '/reports',
-    Icon: IconBarChart,
-    id:'parent-3',
-
-    items: [
+    name: "Procurement",
+    url: "/procurement",
+    icon: "procurement",
+    class: "itemBorderBottom",
+    category: "Products",
+    children: [
       {
-        name: 'Level 2',
-        Icon: IconDashboard,
-        id:'children-0#parent-3',
-
+        name: "Procurement",
+        url: "/procurement",
+        icon: "",
+        class: "itemBorderBottom"
+      }
+    ]
+  },
+  {
+    name: "Inventory",
+    url: "/inventory",
+    icon: "inventory",
+    class: "itemBorderBottom",
+    children: [
+      {
+        name: "Inventory",
+        url: "/inventory",
+        icon: "",
+        class: "itemBorderBottom"
       },
       {
-        name: 'Level 3',
-        Icon: IconDashboard,
-
-        id:'children-1#parent-3',
-
-      },
-    ],
+        name: "Inventory 1",
+        url: "/inventory",
+        icon: "",
+        class: "itemBorderBottom"
+      }
+    ]
   },
   {
-    name: 'Nested Pages',
-    Icon: IconLibraryBooks,
-    id:'parent-4',
-
-    items: [
+    name: "Voucher and Sale",
+    url: "/voucher-and-sales",
+    icon: "voucher-and-sales",
+    class: "itemBorderBottom",
+    children: [
       {
-        name: 'Level 2',
-        Icon: IconDashboard,
-        id:'children-0#parent-4',
-      },
- 
-    ],
+        name: "Voucher and Sale",
+        url: "/voucher-and-sales",
+        icon: "",
+        class: "itemBorderBottom"
+      }
+    ]
   },
-]
-export default appMenuItems;
+  {
+    name: "Catalog",
+    url: "/catalog",
+    icon: "catalog",
+    class: "itemBorderBottom"
+  },
+  {
+    name: "End of Day",
+    url: "/end-of-day",
+    icon: "end-of-day",
+    class: "itemBorderBottom"
+  },
+  {
+    name: "Asset Transfer",
+    url: "/asset-transfer",
+    icon: "asset-transfer",
+    class: "itemBorderBottom"
+  },
+  {
+    name: "Manage Complaint",
+    url: "/manage-complaint",
+    icon: "manage-complaint",
+    class: ""
+  },
+
+  {
+    name: "User",
+    url: "/user",
+    icon: "user",
+    class: "itemBorderBottom",
+    category: "People"
+  },
+  {
+    name: "User Role",
+    url: "/user-role",
+    icon: "user-role",
+    class: "itemBorderBottom"
+  },
+  {
+    name: "Master Data",
+    url: "/master",
+    icon: "user-role",
+    class: "itemBorderBottom"
+  }
+];
+export default menuItems;
